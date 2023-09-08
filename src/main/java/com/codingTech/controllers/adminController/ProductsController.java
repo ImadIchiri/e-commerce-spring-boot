@@ -15,17 +15,19 @@ import com.codingTech.model.Produit;
 @RequestMapping("/dashboard/products")
 public class ProductsController {
 	
-	 @GetMapping("") // Filter By Title '?title=ABABABABA'
-	 public String showProucts(@RequestParam(name = "title", required = false) Optional<String> title) {
-		 
-		 return "";
-	 }
 	
-	 @GetMapping("/{category}")
-	 public String showProductsByCategry(@PathVariable String category) {
-		 
-		 return "";
-	 }
+	
+	@GetMapping("") // Filter By Title '?title=ABABABABA'
+	public String showProucts(@RequestParam(name = "title", required = false) Optional<String> title) {
+		System.out.println("products.jsp");
+		return "/dashboard/products";
+	}
+	
+	@GetMapping("/{category}")
+	public String showProductsByCategry(@PathVariable String category) {
+	 
+	 return "";
+	}
 	 
 	 @GetMapping("/add")
 	 public String showAddProuct() {
@@ -51,7 +53,7 @@ public class ProductsController {
 		 return "redirect:/products";
 	 }
 	 
-	 @PostMapping("/delete/{id}")
+	 @PostMapping("/delete")
 	 public String deleteProuct(@RequestParam int id) {
 		 
 		 return "redirect:/products";
