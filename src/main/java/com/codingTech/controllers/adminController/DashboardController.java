@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/dashboard")
 public class DashboardController {
 	
-	 @GetMapping("")
+	 @GetMapping
 	 public String showDashboard() {
-		 
-		 return "";
+		 System.out.println("dashboard/index");
+		 return "dashboard/index";
 	 }	
 }
