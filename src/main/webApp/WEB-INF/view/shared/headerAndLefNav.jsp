@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 	.left_nav {
-		position: absolute;
+		position: fixed;
 	    height: calc(100vh - 58px);
 	    width: 100%;
 	    max-width: 250px;
@@ -66,7 +66,7 @@
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky top-0" style="background: linear-gradient(to top, #800080, #4b0082);">
+<nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky top-0" style="background: linear-gradient(to top, #800080, #4b0082); z-index: 999;">
   <div class="container position-relative">
     <a class="navbar-brand h1" href="/dashboard">HR</a>
     

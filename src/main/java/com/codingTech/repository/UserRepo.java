@@ -32,7 +32,6 @@ public class UserRepo implements InterUserRepo{
 	}
 	
 	public Optional<Role> getRoleById(int id) {
-		
 		Role r = null;
 		r= em.find(Role.class, id);
 		em.close();
@@ -76,7 +75,7 @@ public class UserRepo implements InterUserRepo{
 	}
 
 	public List<Produit> getProductsByCategorie(String categorieName) {
-		Query q = em.createQuery("select p from Produit p where p.categorie = :produitCategorie");
+		Query q = em.createQuery("select p from Produit p where p.categorie.categorie = :produitCategorie");
 		q.setParameter("produitCategorie", categorieName);
 		List<Produit> ListP = q.getResultList();
 

@@ -1,6 +1,5 @@
 package com.codingTech.repository;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
@@ -9,9 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import com.codingTech.model.Commande;
-import com.codingTech.model.LigneCommande;
-import com.codingTech.model.LignePanier;
-import com.codingTech.model.Panier;
 import com.codingTech.model.Produit;
 import com.codingTech.model.User;
 

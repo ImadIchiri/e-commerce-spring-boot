@@ -1,5 +1,6 @@
 package com.codingTech.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,9 +15,11 @@ public class Produit {
 	private int id;
 	private String titre;
 	private double prix;
+	@Column(name = "quantiteDispo")
 	private int quantityDispo;
+	@Column(name = "image")
 	private String imageName;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Categorie categorie;
 	
 	public Produit() {}
@@ -39,7 +42,7 @@ public class Produit {
 	}
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(int id) {

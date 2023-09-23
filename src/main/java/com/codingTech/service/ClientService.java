@@ -15,18 +15,19 @@ public class ClientService implements interClientService{
 	@Autowired
 	interClientService service;
 	
-		public Optional<LignePanier> addProductToPanier(Panier panier, Produit produit, int quantite) {
-			LignePanier lPanier = null;
-			if (produit.getQuantityDispo() >= quantite) {
-				lPanier = new LignePanier(produit, panier, quantite);
-			}
-			return Optional.ofNullable(lPanier);
+	public Optional<LignePanier> addProductToPanier(Panier panier, Produit produit, int quantite) {
+		LignePanier lPanier = null;
+		if (produit.getQuantityDispo() >= quantite) {
+			lPanier = new LignePanier(produit, panier, quantite);
 		}
 	
-		public void removeProduitFromPanier(int idlLignePanier) {
-		    List<LignePanier> listLignePanier = Panier.getListLignePanier();
-		    
-		    listLignePanier.removeIf(ligne -> ligne.getId() == idlLignePanier);
-		}
+		return Optional.ofNullable(lPanier);
+	}
+	
+	public void removeProduitFromPanier(int idLignePanier) {
+	    List<LignePanier> listLignePanier = Panier.getListLignePanier();
+
+	    listLignePanier.removeIf(ligne -> ligne.getId() == idLignePanier);
+	}
 	
 }
